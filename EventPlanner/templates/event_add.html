@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block content %}
+{% csrf_token %}
+<form method="POST">
+    {% csrf_token %}
+    <input class="form-control" type="text" placeholder="Title" aria-label="default input example" name="title">
+    <input class="form-control" type="text" placeholder="Description" aria-label="default input example" name="description">
+    <input class="form-control" type="text" placeholder="YYYY-MM-DD" aria-label="default input example" name="date">
+    <input class="form-control" type="text" placeholder="Location" aria-label="default input example" name="location">
+    <input type="submit" name="Submit" id="" class="btn-primary">
+</form>
+
+{% endblock %}

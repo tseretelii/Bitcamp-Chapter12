@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if events|length == 0 %}
+<h1 style="text-align: center;">No Events Yet...</h1>
+<div style="display: flex; justify-content: center; padding-top: 20px;">
+    <a href="{% url 'event_add' %}" style="text-align: center;" class="btn btn-primary">Add New Event</a>
+</div>
+{% else %}
+<div style="display: flex; justify-content: center; padding-top: 20px;">
+    <a href="{% url 'event_add' %}" style="text-align: center;" class="btn btn-primary">Add New Event</a>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; text-align: center; margin-top: 10vh;">
+    {% for event in events %}
+    <div style="display: block; margin: auto; text-align: center; margin-top: 10vh;">
+        <h1>{{event}}</h1>
+        <h2>{{event.description}}</h2>
+        <h3>{{event.date}}</h3>
+        <h4>{{event.location}}</h4>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

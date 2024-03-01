@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+{% csrf_token %}
+<form method="POST" style="padding: 20px;">
+    {% csrf_token %}
+    <input class="form-control" type="text" placeholder="Title" name="title">
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+    <input type="submit" name="Submit" id="" class="btn btn-primary" value="Submit">
+</form>
+{% endblock %}
